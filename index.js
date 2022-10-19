@@ -13,8 +13,9 @@ mongoose.connect(process.env.DBHOST, {
     useNewUrlParser: true
 })
 
-app.listen(3001, () => {
-    console.log('server is running at ${port} -- > 3001')
+var port = process.env.PORT || 80;
+app.listen(port,() => {
+    console.log('server is running at PORT -- >'+ port);
 });
 
 console.log(process.env.DBHOST);
